@@ -6,4 +6,3 @@ fiona
 rtree
 shapely
 geopandas
-
