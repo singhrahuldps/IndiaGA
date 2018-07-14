@@ -1,0 +1,9 @@
+pandas
+numpy
+bokeh
+GDAL
+fiona
+rtree
+shapely
+geopandas
+
