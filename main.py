@@ -117,10 +117,5 @@ def print_map(party, party_dict, grid):
     p.add_tools(HoverTool(tooltips=[
         ('State', "@State"),
         ('Percent', '@Percent')], ))
-    output_file("map.html", title="Votes Percentage")
+    output_file("templates/map.html", title="Votes Percentage")
     save(p)
-
-########### USAGE ##########
-#from main import initial_run,print_map
-#party_dict, grid = initial_run()
-#print_map('Indian National Congress', party_dict, grid)
