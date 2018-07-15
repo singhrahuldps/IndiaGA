@@ -14,7 +14,7 @@ def select_party():
 	print(request)
 	print('<iframe src="'+request.url_root+'map" name="targetframe" allowTransparency="true" scrolling="no" style="width:650px;height:600px" >')
 	main.print_map(request.get_json()['party-name'], party_dict, grid)
-	return '<iframe src="'+request.url_root+'map" name="targetframe" allowTransparency="true" scrolling="no" style="width:650px;height:600px" >'
+	return '<iframe src=map.html name="targetframe" allowTransparency="true" scrolling="no" style="width:650px;height:600px" >'
 
 @app.route('/map')
 def show_map():
@@ -22,6 +22,6 @@ def show_map():
 
 
 if __name__ == '__main__':
-	#app.debug = True
+	app.debug = True
 	port = int(os.environ.get("PORT", 5000))
 	app.run(host='0.0.0.0', port=port)
