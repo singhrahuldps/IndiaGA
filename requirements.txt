@@ -7,8 +7,6 @@ cycler==0.10.0
 descartes==1.1.0
 Fiona==1.7.12
 Flask==1.0.2
-PyNaCl
-cffi
 GDAL==2.2.4
 geopandas==0.3.0
 itsdangerous==0.24
