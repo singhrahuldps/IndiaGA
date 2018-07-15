@@ -1,3 +1,4 @@
+Flask==1.0.2
 bokeh==0.13.0
 certifi==2018.4.16
 click==6.7
@@ -6,7 +7,6 @@ cligj==0.4.0
 cycler==0.10.0
 descartes==1.1.0
 Fiona==1.7.12
-Flask==1.0.2
 GDAL==2.2.4
 geopandas==0.3.0
 itsdangerous==0.24

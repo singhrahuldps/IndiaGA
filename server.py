@@ -1,4 +1,3 @@
-import flask
 from flask import Flask, render_template, request, jsonify, request
 import main
 import os
