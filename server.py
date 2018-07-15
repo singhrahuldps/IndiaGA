@@ -1,6 +1,7 @@
 import flask
 from flask import Flask, render_template, request, jsonify, request
 import main
+import os
 
 app = Flask(__name__)
 party_dict, grid = main.initial_run()
@@ -21,5 +22,7 @@ def show_map():
 	return render_template('map.html')
 
 
-if __name__ == "__main__":
-	app.run(port = 5000, debug = True)
+if __name__ == '__main__':
+	app.debug = True
+	port = int(os.environ.get("PORT", 5000))
+	app.run(host='0.0.0.0', port=port)
