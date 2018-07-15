@@ -15,16 +15,16 @@ html= '<html></html'
 def select_party():	
 	print(request)
 	print('<iframe src="'+request.url_root+'map" name="targetframe" allowTransparency="true" scrolling="no" style="width:650px;height:600px" >')
-	html = main.print_map(request.get_json()['party-name'], party_dict, grid)
+	main.print_map(request.get_json()['party-name'], party_dict, grid)
 	return '<iframe src="'+request.url_root+'map" name="targetframe" allowTransparency="true" scrolling="no" style="width:650px;height:600px" >'
 	#script, div = main.print_map(request.get_json()['party-name'], party_dict, grid)
 	#return render_template('index.html', script=script, div=div)
 
 @app.route('/map')
 def show_map():
-	html = main.print_map('Samajwadi Party', party_dict, grid)
-	print(html[:10])
-	return html#render_template('map.html')
+	#html = main.print_map('Samajwadi Party', party_dict, grid)
+	#print(html[:10])
+	return render_template('map.html')#html
 
 
 if __name__ == '__main__':
