@@ -11,7 +11,13 @@ def index():
 
 @app.route('/party', methods=['POST'])
 def select_party():	
-	main.print_map(request.form['party-name'], party_dict, grid)
+	print(request)
+	print('<iframe src="'+request.url_root+'map" name="targetframe" allowTransparency="true" scrolling="no" style="width:650px;height:600px" >')
+	main.print_map(request.get_json()['party-name'], party_dict, grid)
+	return '<iframe src="'+request.url_root+'map" name="targetframe" allowTransparency="true" scrolling="no" style="width:650px;height:600px" >'
+
+@app.route('/map')
+def show_map():
 	return render_template('map.html')
 
 
