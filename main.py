@@ -4,6 +4,7 @@ from bokeh.io import show, output_file
 from bokeh.models import HoverTool
 from bokeh.models import GeoJSONDataSource
 from bokeh.plotting import figure, save
+from bokeh.embed import components 
 import geopandas as gpd
 import copy
 
@@ -119,3 +120,5 @@ def print_map(party, party_dict, grid):
         ('Percent', '@Percent')], ))
     output_file("templates/map.html", title="Votes Percentage")
     save(p)
+    #script, div = components(p)
+    #return script, div
