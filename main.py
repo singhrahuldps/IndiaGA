@@ -1,5 +1,5 @@
-import pandas as pd
 import numpy as np
+import pandas as pd
 from bokeh.io import show, output_file
 from bokeh.models import HoverTool
 from bokeh.models import GeoJSONDataSource
