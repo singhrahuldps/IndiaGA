@@ -1,11 +1,6 @@
 Flask==1.0.2
 bokeh==0.13.0
-Fiona==1.7.12
-geopandas==0.3.0
-matplotlib==2.2.2
 numpy==1.14.5
 pandas==0.23.2
-python-dateutil==2.7.3
-PyYAML==3.12
-Rtree==0.8.3
-Shapely==1.6.4.post1
+Fiona==1.7.12
+geopandas==0.3.0
