@@ -6,6 +6,7 @@ app = Flask(__name__)
 party_dict, grid = main.initial_run()
 
 html = '<html></html>'
+#html = main.print_map('Bharatiya Janata Party', party_dict, grid)
 
 @app.route('/')
 def index():
