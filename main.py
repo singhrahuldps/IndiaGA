@@ -122,10 +122,4 @@ def print_map(party, party_dict, grid):
         ('Percent', '@Percent')], ))
 
     html = file_html(p, CDN, "Votes Percentage")
-    with open("templates/map.html", 'w') as f:
-        f.write(html)
-    #return html
-    #output_file("templates/map.html", title="Votes Percentage")
-    #save(p)
-    #script, div = components(p)
-    #return script, div
+    return html

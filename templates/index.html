@@ -480,10 +480,9 @@
 			<input type="submit">
 		</form>
 	</div>
-	<div id="map">
-		
-	</div>
-	
+
+	<iframe id="iframe" src="blank:" style="width: 600px;height:650px"></iframe>
+
 </body>
 <script>
 	var data = {};
@@ -491,13 +490,13 @@
 		e.preventDefault();
 		data["party-name"] = document.getElementsByName('party-name')[0].value;
 		$.ajax({
-             url: e.target.baseURI + 'party', // url where to submit the request
-             type : "POST", // type of action POST || GET
-             contentType : 'application/json', // data type
-             data : JSON.stringify(data), //, post data || get data
+             url: e.target.baseURI + 'party',
+             type : "POST",
+             contentType : 'application/json',
+             data : JSON.stringify(data),
              success : function(result) {
-                 console.log(result);
-                 $('#map').html(result);
+                 var iframe = document.getElementById('iframe');
+                 iframe.src = 'data:text/html,'+result;
        		}
 		})
 	})
