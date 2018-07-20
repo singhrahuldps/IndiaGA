@@ -2,14 +2,19 @@
 <html lang="en">
 <head
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>India General Assembly Elections 2014</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='chosen.min.css') }}"></link>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></link>
 	<script type="text/javascript" src="{{ url_for('static', filename='jquery-2.1.3.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='chosen.jquery.min.js') }}"></script>
 </head>
 <body>
+	<div class="heading"><h3>Visualising Indian General Assembly Elections 2014</h3></div>
 
-	<div>
+	<div class="myForm">
 		<form id="form_id">
-			<select name="party-name">
+			<select class="menuSelect" name="party-name">
+				<option value="None"></option>
 			  	<option value="Bharatiya Janata Party">Bharatiya Janata Party</option>
 				<option value="Indian National Congress">Indian National Congress</option>
 				<option value="Bahujan Samaj Party">Bahujan Samaj Party</option>
@@ -477,11 +482,11 @@
 				<option value="Rashtriya Jankranti Party">Rashtriya Jankranti Party</option>
 				<option value="Bharat Vishal Party">Bharat Vishal Party</option>
 			</select>
-			<input type="submit">
+			<input type="submit" class="button">
 		</form>
 	</div>
 
-	<iframe id="iframe" src="blank:" style="width: 600px;height:650px"></iframe>
+	<iframe id="iframe" style="height:600px;width:650px"></iframe>
 
 </body>
 <script>
@@ -489,16 +494,27 @@
 	$('#form_id').on('submit', function(e){
 		e.preventDefault();
 		data["party-name"] = document.getElementsByName('party-name')[0].value;
-		$.ajax({
-             url: e.target.baseURI + 'party',
-             type : "POST",
-             contentType : 'application/json',
-             data : JSON.stringify(data),
-             success : function(result) {
-                 var iframe = document.getElementById('iframe');
-                 iframe.src = 'data:text/html,'+result;
-       		}
-		})
+
+		if(data["party-name"] !== "None"){
+				$.ajax({
+	             url: e.target.baseURI + 'party',
+	             type : "POST",
+	             contentType : 'application/json',
+	             data : JSON.stringify(data),
+	             success : function(result) {
+	                 var iframe = document.getElementById('iframe');
+	                 iframe.src = 'data:text/html,'+result;
+	       		}
+			})
+		}else {
+			alert("Please Select a Party");
+		}
 	})
+	$(document).ready(function() {
+    	$('.menuSelect').chosen({
+	      placeholder_text_single: "Select Party",
+	      no_results_text: "Oops, nothing found!"
+	    });
+	});
 </script>
 </html>

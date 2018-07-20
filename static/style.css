@@ -1,0 +1,17 @@
+.myForm {
+	margin: 10px;
+	border-bottom: 1px solid black;
+	padding-bottom: 5px;
+	width:342px;
+}
+
+.menuSelect {
+	width: 280px;
+}
+
+.button {
+	color: #ffffff;
+	background-color: #0c93e2;
+	border: none;
+	padding: 4px 6px;
+}
