@@ -1,17 +1,22 @@
 .myForm {
-	margin: 10px;
-	border-bottom: 1px solid black;
-	padding-bottom: 5px;
-	width:342px;
+	text-align: center;
 }
 
-.menuSelect {
-	width: 280px;
+.heading > h3{
+	text-align: center;
 }
 
-.button {
-	color: #ffffff;
-	background-color: #0c93e2;
-	border: none;
-	padding: 4px 6px;
+#form_id {
+	padding: 5px 0;
+}
+
+.map-container{
+	text-align: center;
+}
+
+#map{
+	border: 1px solid black;
+	background-color: #fff;
+	height:630px;
+	width:640px;
 }
